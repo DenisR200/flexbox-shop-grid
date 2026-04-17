@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.box {
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    border: 2px solid black;
+    color: #111;
+}
+
+.box1 { background: #ffb703; }
+.box2 { background: #219ebc; color: white; } 
+.box3 { 
+    background: #e63946; 
+    color: white;
+    min-height: 160px; 
+}
+.box4 { background: #90be6d; } 
+.box5 { background: #43aa8b; color: white; } 
+.box6 { background: #577590; color: white; } 
+.box7 { background: #9b5de5; color: white; } 
+.box8 { background: #6c757d; color: white; } 
+
+@media (min-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+            "logo menu menu"
+            "hero hero sidebar"
+            "card1 card2 card3"
+            "footer footer footer";
+    }
+
+    .box1 { grid-area: logo; }
+    .box2 { grid-area: menu; }
+    .box3 { grid-area: hero; }
+    .box4 { grid-area: card1; }
+    .box5 { grid-area: card2; }
+    .box6 { grid-area: card3; }
+    .box7 { grid-area: sidebar; }
+    .box8 { grid-area: footer; }
+}
